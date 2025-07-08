@@ -1,0 +1,70 @@
+Мне пока не нужны юзеры и подобное.
+
+Мне нужно реализовать clinic
+
+export type TClinicsNetItem = Pick<
+  TClinicsDataStructure,
+  'id' | 'address' | 'name'
+> &
+  TPrevPage;
+
+export type TClinicsDataStructure = {
+  id: string;
+  name: string;
+  type: string;
+  clinicWorkBegin: string;
+  square: number;
+  phone: string;
+  reportPhone: string;
+  country: string;
+  city: string;
+  address: string;
+  floorCount: number;
+  hasComputer: boolean;
+  workTime: string;
+  categories: {
+    qnt: number;
+  };
+  languages: EnLanguages[];
+  mediafiles: unknown;
+  hasElevator: boolean;
+  clinicsNet: TClinicsNetItem[];
+  servicesQnt: number;
+  doctorsQnt: number;
+} & TPrevPage;
+
+export type TDoctorItem = {
+  id: TDoctorsDataStructure['id'];
+  name: TDoctorsDataStructure['name'];
+  speciality: TDoctorsDataStructure['speciality'];
+} & TPrevPage;
+
+export type TServicesDataStructure = {
+  id: string;
+  name: string;
+  category: string;
+  consultationType: EnNetType;
+  description: string;
+  price: string;
+  payType: EnPayType[];
+  duration: string;
+  doctors: TDoctorItem[];
+} & TPrevPage;
+
+export type TDoctorItem = {
+  id: TDoctorsDataStructure['id'];
+  name: TDoctorsDataStructure['name'];
+  speciality: TDoctorsDataStructure['speciality'];
+} & TPrevPage;
+
+export type TServicesDataStructure = {
+  id: string;
+  name: string;
+  category: string;
+  consultationType: EnNetType;
+  description: string;
+  price: string;
+  payType: EnPayType[];
+  duration: string;
+  doctors: TDoctorItem[];
+} & TPrevPage;
